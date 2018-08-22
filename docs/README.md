@@ -37,6 +37,7 @@ MultiQC Modules:
     TopHat: modules/tophat.md
   Post-alignment:
     NuGEN_dedup: modules/NuGEN_dedup.md
+    NuGEN_geneCount: modules/NuGEN_geneCount.md
     Bamtools: modules/bamtools.md
     Bcftools: modules/bcftools.md
     BUSCO: modules/busco.md

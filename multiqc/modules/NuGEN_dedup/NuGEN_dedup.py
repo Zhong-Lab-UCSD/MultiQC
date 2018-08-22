@@ -29,13 +29,14 @@ class MultiqcModule(BaseMultiqcModule):
         self.dedup_data = dict()
         self.dedup_keys = list()
 
-        for f in self.find_log_files('NuGEN_dedup'):
+       for f in self.find_log_files('NuGEN_dedup'):
             fileName = f['s_name'][:-8]
             if fileName in self.dedup_data:
                 log.debug("Duplicate sample name found! Overwriting: {}".format(f['s_name'][:-8]))
             self.dedup_data[fileName] = self.parse_dedup_report(f['f'])
-            self.dedup_keys = list(self.dedup_data[fileName].keys())
-        
+            #self.dedup_keys = list(self.dedup_data[fileName].keys())
+            self.dedup_keys = self.dedup_data.keys()      
+      
         if len(self.dedup_data) == 0:
             raise UserWarning
 

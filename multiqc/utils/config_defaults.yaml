@@ -232,6 +232,8 @@ module_order:
     - NuGEN_dedup:
         module_tag:
             - RNA
+    - NuGEN_geneCount:
+            - RNA
     # Post-alignment QC
     - conpair:
         module_tag:
