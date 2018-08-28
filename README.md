@@ -69,7 +69,10 @@ import all the modules that provided by MultiQC. Also creates the entry point fo
 
 Cuerrent MultiQC contains following tools. 
 
-[NuGEN_dedup]:
+[NuGEN_dedup]:http://multiqc.info/docs/#NuGEN_dedup
+[FCount_cus]:http://multiqc.info/docs/#FCount_cus
+[afterqc]:        http://multiqc.info/docs/#afterqc
+[afterqc]:        http://multiqc.info/docs/#afterqc
 [adapterremoval]: http://multiqc.info/docs/#adapter-removal
 [afterqc]:        http://multiqc.info/docs/#afterqc
 [bamtools]:       http://multiqc.info/docs/#bamtools
