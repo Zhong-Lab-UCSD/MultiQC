@@ -1,14 +1,25 @@
 # Abstract
-This modified version of MultiQC added a module named NuGEN_dedup, which would process the data of deduplication by using NuGEN set for the extracellular RNA project.
+This modified version of MultiQC added modules named NuGEN_dedup and FCount_cus
+- NuGEN_dedup:process the data of deduplication by using NuGEN set for the extracellular RNA project
+- FCount_cus: Count the number of genes that appear 0-10 times, 10-100 times and greater then 100 times. 
 
 # Modified files:
-**setup.py** (~/MultiQC/setup.py)   add 'NuGEN_dedup = multiqc.modules.NuGEN_dedup:MultiqcModule' to the entry_points section
+**setup.py** (~/MultiQC/setup.py) add 
+- 'NuGEN_dedup = multiqc.modules.NuGEN_dedup:MultiqcModule' 
+- 'FCount_cus = multiqc.modules.FCount_cus:MultiqcModule' 
 
+to the entry_points section
 
-**search_patterns.yaml**  (~/MultiQC/multiqc/utils/search_patterns.yaml)   add search pattern to the search_patterns.yaml. The format of utput of NuGEN deduplication is *_dup_log.txt
+**search_patterns.yaml**  (~/MultiQC/multiqc/utils/search_patterns.yaml)   add search pattern to the search_patterns.yaml. 
+
+The format of output of NuGEN deduplication is *_dup_log.txt*
+The format of output of FCount_cus is *.mergeCount*
+
 ```
 NuGEN_dedup:
     fn: '*_dup_log.txt'
+FCount_cus"
+    fn:'*.mergeCount'
 ```
 
 **config_defaults.yaml** (~/MultiQC/multiqc/utils/config_defaults.yaml)   add the module to the top of module_order in config_defaults.yaml
@@ -19,22 +30,37 @@ module_order:
     - NuGEN_dedup:
         module_tag:
             - RNA
+    - FCount_cus:
+        modeule_tag:
+            - RNA
 ```
 
-**README.md** (~/MultiQC/docs/README.md)   add the information of added module NuGEN_dedup to the post-alignment section of README
+**README.md** (~/MultiQC/docs/README.md)   add the information of added module NuGEN_dedup and FCount_cus to the post-alignment section of README
 ```
 Post-alignment:
     NuGEN_dedup: modules/NuGEN_dedup.md
+    FCount_cus: modules/FCount_cus.md
 ```
 
 # Added directory and files
-**NuGEN_dedup.md** (~docs/modules/NuGEN_dedup.md)   added explianation file under the directory of doc. No meaningful content in this file
+**NuGEN_dedup.md** (~docs/modules/NuGEN_dedup.md) 
+**FCount_cus.md** (~docs/modules/FCount_cus.md)
 
-**NuGEN_dedup** (~/MultiQC/multiqc/modules/NuGEN_dedup) created directory under the directory of module. The name of directory should be the same as the name of module. This directory will hold the file of ```__init__.py``` and ```NuGEN_dedup.py```.
+added explianation file under the directory of doc. No meaningful content in this file
 
-**NuGEN_dedup.py** (~/MultiQC/multiqc/modules/NuGEN_dedup/NuGEN_dedup.py)   The main program for add data to general stats and add section to the multiQC report. Name should be the same as the name of module
+**NuGEN_dedup** (~/MultiQC/multiqc/modules/NuGEN_dedup) 
+**FCount_cus** (~/MultiQC/multiqc/modules/FCount_cus)
 
-**__init__.py** (~/MultiQC/multiqc/modules/NuGEN_dedup/__init__.py)   import all the modules that provided by MultiQC. Also creates the entry point for our module
+created directory under the directory of module. The name of directory should be the same as the name of module. This directory will hold the file of ```__init__.py``` and ```moduleName.py```.
+
+**NuGEN_dedup.py** (~/MultiQC/multiqc/modules/NuGEN_dedup/NuGEN_dedup.py)   
+**FCount.py** (~/MultiQC/multiqc/modules/FCount_cus/FCount_cus.py) 
+
+The main program for add data to general stats and add section to the multiQC report. Name should be the same as the name of module
+
+**__init__.py** (~/MultiQC/multiqc/modules/NuGEN_dedup/__init__.py)   
+**__init__.py** (~/MultiQC/multiqc/modules/FCount_cus/__init__.py)
+import all the modules that provided by MultiQC. Also creates the entry point for our module
 
 Cuerrent MultiQC contains following tools. 
 
