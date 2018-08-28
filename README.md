@@ -43,23 +43,28 @@ Post-alignment:
 ```
 
 # Added directory and files
-**NuGEN_dedup.md** (~docs/modules/NuGEN_dedup.md) 
-**FCount_cus.md** (~docs/modules/FCount_cus.md)
+**.md**
+- NuGEN_dedup.md (~docs/modules/NuGEN_dedup.md) 
+- FCount_cus.md** (~docs/modules/FCount_cus.md)
 
 added explianation file under the directory of doc. No meaningful content in this file
 
-**NuGEN_dedup** (~/MultiQC/multiqc/modules/NuGEN_dedup) 
-**FCount_cus** (~/MultiQC/multiqc/modules/FCount_cus)
+**directory**
+- NuGEN_dedup (~/MultiQC/multiqc/modules/NuGEN_dedup) 
+- FCount_cus** (~/MultiQC/multiqc/modules/FCount_cus)
 
 created directory under the directory of module. The name of directory should be the same as the name of module. This directory will hold the file of ```__init__.py``` and ```moduleName.py```.
 
-**NuGEN_dedup.py** (~/MultiQC/multiqc/modules/NuGEN_dedup/NuGEN_dedup.py)   
-**FCount.py** (~/MultiQC/multiqc/modules/FCount_cus/FCount_cus.py) 
+**.py**
+- NuGEN_dedup.py (~/MultiQC/multiqc/modules/NuGEN_dedup/NuGEN_dedup.py)   
+- FCount.py (~/MultiQC/multiqc/modules/FCount_cus/FCount_cus.py) 
 
 The main program for add data to general stats and add section to the multiQC report. Name should be the same as the name of module
 
-**__init__.py** (~/MultiQC/multiqc/modules/NuGEN_dedup/__init__.py)   
-**__init__.py** (~/MultiQC/multiqc/modules/FCount_cus/__init__.py)
+**__init__.py** 
+- (~/MultiQC/multiqc/modules/NuGEN_dedup/__init__.py)   
+- (~/MultiQC/multiqc/modules/FCount_cus/__init__.py)
+
 import all the modules that provided by MultiQC. Also creates the entry point for our module
 
 Cuerrent MultiQC contains following tools. 
