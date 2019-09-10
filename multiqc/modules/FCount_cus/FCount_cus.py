@@ -73,7 +73,8 @@ class MultiqcModule(BaseMultiqcModule):
             count_info["counts > 100"] = int(s[3])
             
             #information for report section
-            count_info["counts:0-10"] = count_info["counts > 0"]-count_info["counts > 10"]-count_info["counts > 100"]
+            #count_info["counts:0-10"] = count_info["counts > 0"]-count_info["counts > 10"]-count_info["counts > 100"]
+            count_info["counts:0-10"] = count_info["counts > 0"]-count_info["counts > 10"]
             count_info["counts:10-100"] = count_info["counts > 10"]-count_info["counts > 100"]
             
             parsed_data[fileName] = count_info
